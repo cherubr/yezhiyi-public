@@ -1,0 +1,32 @@
+name: 问题反馈
+description: 报告网页翻译、PDF 阅读或导出问题
+title: "[问题] "
+body:
+  - type: markdown
+    attributes:
+      value: 请先搜索已有问题。不要提交密钥、私人文档、完整请求或未脱敏日志。
+  - type: input
+    id: version
+    attributes:
+      label: 扩展版本
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Chrome 版本与操作系统
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 重现步骤
+      description: 请使用可公开的最小示例描述问题，不要附私人文档。
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 预期结果与实际结果
+    validations:
+      required: true
