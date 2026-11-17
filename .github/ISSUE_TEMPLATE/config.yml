@@ -1,8 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 使用帮助
+  - name: 使用帮助 · User guide
     url: https://cherubr.github.io/yezhiyi-public/help.html
-    about: 查看基本操作、导出区别及反馈注意事项
-  - name: 隐私与数据说明
+    about: 查看基本操作、导出区别及反馈注意事项 · Basic operation, export differences, and what to include
+  - name: English guide
+    url: https://cherubr.github.io/yezhiyi-public/help/en.html
+    about: Steps for web and PDF translation, interface language, themes, and export options
+  - name: 隐私与数据说明 · Privacy and data
     url: https://cherubr.github.io/yezhiyi-public/privacy.html
-    about: 查看文字发送、本机存储、同步与清理说明
+    about: 查看文字发送、本机存储、同步与清理说明 · What is sent, stored locally, synced, and how to clear it

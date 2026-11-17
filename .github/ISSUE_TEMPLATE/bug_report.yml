@@ -1,32 +1,32 @@
-name: 问题反馈
-description: 报告网页翻译、PDF 阅读或导出问题
+name: 问题反馈 · Bug report
+description: 报告网页翻译、PDF 阅读或导出问题 · Report a web, PDF reading, or export problem
 title: "[问题] "
 body:
   - type: markdown
     attributes:
-      value: 请先搜索已有问题。不要提交密钥、私人文档、完整请求或未脱敏日志。
+      value: 请先搜索已有问题。不要提交密钥、私人文档、完整请求或未脱敏日志。 Please search existing issues first. Do not include API keys, private documents, full requests, or unredacted logs.
   - type: input
     id: version
     attributes:
-      label: 扩展版本
+      label: 扩展版本 · Extension version
     validations:
       required: true
   - type: input
     id: environment
     attributes:
-      label: Chrome 版本与操作系统
+      label: Chrome 版本与操作系统 · Chrome version and operating system
     validations:
       required: true
   - type: textarea
     id: steps
     attributes:
-      label: 重现步骤
-      description: 请使用可公开的最小示例描述问题，不要附私人文档。
+      label: 重现步骤 · Steps to reproduce
+      description: 请使用可公开的最小示例描述问题，不要附私人文档。 Describe the problem with a shareable minimal example; do not attach private documents.
     validations:
       required: true
   - type: textarea
     id: result
     attributes:
-      label: 预期结果与实际结果
+      label: 预期结果与实际结果 · Expected and actual result
     validations:
       required: true

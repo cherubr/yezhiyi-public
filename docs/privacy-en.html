@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Yezhiyi · Privacy and data</title><style>
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 24px; }
+    body { margin: 0; background: #f5f7fb; color: #243247; font: 16px/1.85 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { max-width: 900px; margin: 40px auto; padding: 40px 48px; background: #fff; border: 1px solid #dfe5ee; border-radius: 16px; }
+    h1, h2, h3 { color: #17263d; line-height: 1.45; }
+    h1 { margin: 0 0 8px; font-size: 30px; }
+    h2 { margin: 36px 0 12px; font-size: 22px; }
+    h3 { margin: 24px 0 8px; font-size: 18px; }
+    p { margin: 12px 0; }
+    ul { padding-left: 24px; }
+    li { margin: 8px 0; }
+    p, li, dd, a, td, th { overflow-wrap: anywhere; }
+    a { color: #0965b5; text-underline-offset: 3px; }
+    a:hover { color: #064a85; }
+    a:focus-visible { outline: 2px solid #0965b5; outline-offset: 4px; }
+    code { font-size: .9em; background: #f2f5fa; padding: 1px 5px; border-radius: 4px; }
+    .updated { color: #586a80; font-size: 14px; }
+    .summary { margin: 24px 0; padding: 16px 20px; background: #f0f6ff; border-left: 3px solid #0965b5; border-radius: 4px; }
+    .pending { margin: 24px 0; padding: 16px 20px; background: #fff8ec; border-left: 3px solid #b5760a; border-radius: 4px; }
+    nav { padding: 16px 20px; border: 1px solid #dfe5ee; border-radius: 8px; }
+    nav ul { display: flex; flex-wrap: wrap; gap: 8px 24px; list-style: none; margin: 0; padding: 0; }
+    nav li { margin: 0; }
+    dt { margin-top: 16px; font-weight: 600; }
+    dd { margin: 4px 0 0; }
+    .table-wrap { overflow-x: auto; margin: 16px 0; }
+    table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 15px; }
+    th, td { border: 1px solid #dfe5ee; padding: 10px 12px; text-align: left; vertical-align: top; }
+    th { background: #f5f7fb; color: #17263d; font-weight: 600; }
+    details { margin: 16px 0; padding: 12px 16px; border: 1px solid #dfe5ee; border-radius: 8px; background: #fafbfd; }
+    summary { cursor: pointer; font-weight: 600; color: #17263d; }
+    details ul { margin: 12px 0 4px; }
+    footer { margin-top: 36px; padding-top: 20px; border-top: 1px solid #dfe5ee; color: #586a80; font-size: 14px; }
+    @media (max-width: 600px) {
+      main { margin: 0; padding: 28px 20px; border: 0; border-radius: 0; }
+      h1 { font-size: 26px; }
+      h2 { font-size: 20px; }
+      h3 { font-size: 17px; }
+      body { font-size: 15px; }
+      .summary, .pending, nav { padding: 14px 16px; }
+      table { font-size: 14px; min-width: 460px; }
+      th, td { padding: 8px 10px; }
+    }
+  </style></head><body><main><p><a href="privacy.html">简体中文</a> · <a href="https://github.com/cherubr/yezhiyi-public">Project and feedback</a></p>
+<h1>Yezhiyi · Privacy and data</h1><p class="updated">Updated: 17 November 2026 · Source version 1.0.3</p>
+<div class="summary">Yezhiyi processes webpages and PDFs on your device. Text you translate is sent directly to your chosen translation service. PDF files and page images are not sent to that service. API keys stay on this device; general preferences may sync through Chrome. The extension includes no analytics or advertising code.</div>
+<h2>Webpage text</h2><p>Clicking the floating button, a keyboard shortcut, a paragraph translation gesture, or a context-menu command starts the relevant translation. Automatic translation is off by default; when enabled, eligible visible text is sent automatically. Active page translation also handles new visible content. New requests pause while the page is hidden. Canceling ends that page's session.</p><p>Password fields, input values, editable areas, and protected code or formula content are excluded from whole-page translation. Open Shadow DOM and accessible frames follow the same collection rules. Closed Shadow DOM is not read. Translation requests do not deliberately include the page URL, browsing history, or entire page HTML. The selected text itself may contain names, links, account details, or other private information, which will be sent with the text.</p>
+<h2>PDFs, OCR, editing, and export</h2><p>Local PDFs are opened on this device. Online PDFs are retrieved directly from an authorized source, up to 50 MiB. These requests omit cookies and Referer headers and reject redirects. The source server still receives the requested URL, IP address, and normal connection metadata. For protected or redirected files, download them first and open locally. Document passwords are used in memory for this opening only.</p><p>Starting PDF translation extracts text and runs OCR locally where needed. Only eligible extracted text and language parameters go to the translation service. Complete PDF bytes, page images, and OCR bitmaps are not uploaded. Layout, manual revisions, independent editor drafts, and export run locally. Saved drafts may contain images extracted from the page or inserted by you.</p><p>Changing reading modes, zoom, and rotation reuses existing results. Explicitly translating missing pages or translating again sends the corresponding text. Export does not change the source file or itself start new OCR or translation. Exported PDFs are separate files you manage.</p>
+<h2>Recipients and downloads</h2><p>There is no Yezhiyi translation relay server. The background worker connects directly to Google Translate, MyMemory, Baidu, or the selected AI endpoint. Providers set their own data retention, model-training, billing, and privacy policies. Configure a local Ollama server if you wish to send translation text to a local endpoint. Every network recipient can see normal connection metadata, including your IP address.</p><p>English and Simplified Chinese OCR models are bundled. Other supported language models and export fonts download from fixed sources when needed, after source permission is granted. Downloads are checked against expected size and SHA-256 and stored locally. The download host receives the resource request and normal network metadata, not your PDF pages. Provider websites opened for documentation or credentials are governed by their own policies.</p><p>This privacy page, when hosted on GitHub Pages, connects to GitHub's hosting service under its logging policies. It uses no tracking scripts, remote fonts, or external executable code.</p>
+<h2>Storage and synchronization</h2><ul>
+<li><strong>Local Chrome storage:</strong> AI endpoint, model and key settings; Baidu credentials and verification records; per-service rate and concurrency policies; custom glossary rules. These are not written to Chrome Sync.</li>
+<li><strong>Chrome Sync preferences:</strong> selected service/provider, source and target languages, interface language, themes and color mode, translation typography, automatic/hover translation preferences, floating menu preferences and position, and shortcut enablement. These contain no document content or API keys, but may sync to devices using the same Chrome account.</li>
+<li><strong>IndexedDB:</strong> saved in-place revisions, independent translation drafts (potentially including images), downloaded OCR models, and downloaded export fonts. Legacy revision data may be read for compatibility.</li>
+<li><strong>Local storage:</strong> PDF thumbnail sidebar visibility and reader split ratio.</li>
+<li><strong>Memory:</strong> page source snapshots, translations, current PDF bytes, OCR and reading/export caches. The shared background translation cache holds at most 256 entries; successful results expire after ten minutes, failed-request cooldown is thirty seconds, and background shutdown clears it. Closing the PDF reader releases its in-memory document state.</li></ul><p>Older versions stored credentials in Sync. Migration prefers existing local settings, copies legacy credentials locally, and removes legacy Sync fields only after a successful local write. The extension cannot control historical copies retained by Chrome's synchronization service.</p>
+<h2>Browser permissions</h2><ul><li><strong>Site access and content scripts:</strong> collect eligible text and display translation controls on sites allowed by Chrome.</li><li><strong>Fixed service hosts:</strong> translation requests and connection tests, including loopback Ollama endpoints.</li><li><strong>Optional HTTP/HTTPS hosts:</strong> request access to a custom AI host, online PDF source, or model/font download source when you invoke that action. Refusing permission blocks the request. Revoke access in Chrome extension settings.</li><li><strong>storage:</strong> local configuration and eligible synchronized preferences.</li><li><strong>contextMenus:</strong> translate a page or selected text when you invoke a menu item.</li><li><strong>tabs:</strong> address the active tab and open extension settings or the PDF reader.</li><li><strong>webNavigation:</strong> verify document identity, restore navigation sessions, and route frame-specific paragraph gestures. Document identities remain in memory; browsing history is not stored or uploaded.</li></ul>
+<h2>What we do not do</h2><ul>
+<li>No advertising, usage analytics, or telemetry code, and no data-collection server of our own.</li>
+<li>No collection of account identity, names, email addresses, device identifiers, or location; the extension has no registration or sign-in.</li>
+<li>No reading or uploading of browsing history, cookies, bookmarks, or download records.</li>
+<li>No upload of complete PDF files, page images, OCR bitmaps, or whole-page HTML.</li>
+<li>No remote executable code; translation and PDF engines ship inside the package, and what downloads on demand is model and font data.</li>
+<li>No deliberate inclusion of the page address in translation requests, and no bulk export of your glossary to a service.</li>
+</ul><p>Exceptions you should know about: the service you choose processes the text and normal connection metadata under its own policy; Chrome Sync transmits ordinary preferences according to your account settings; GitHub Pages records access to this page under its hosting rules. These are outside the extension's control.</p>
+<h2>Logs, security, and retention</h2><p>Development diagnostics use task stages, counts, timing, status codes, and service identifiers. They must not record source/translated text, credentials, or sensitive request information. Release preparation disables extension logging in its temporary release copy. Runtime messages use Chrome-provided sender identity, and translation results are checked against cancellation and configuration generations.</p><p>Local storage is not an encrypted vault. Someone with access to your device or browser profile may access locally stored configuration and drafts. Use appropriate device security. Custom remote APIs require HTTPS; HTTP is limited to supported loopback endpoints. These controls cannot guarantee a third-party provider's behavior.</p><p>Saved configuration, drafts, revisions, models, and fonts do not expire automatically. They remain until deleted or the extension is uninstalled. Downloaded models/fonts can be managed in the reader; credentials and glossary entries can be edited or cleared in settings. Closing a page does not delete saved drafts. You manage separately exported glossary JSON and PDF files yourself. Provider-held data must be handled under that provider's deletion policy.</p>
+<h2>Items still to be confirmed</h2><div class="pending">The following cannot be verified from the source code. They are policy or operating decisions and are <strong>not decided</strong>. This page makes no promise about them; update this document and the date above once they are decided.</div><ul>
+<li><strong>Effective date and policy version:</strong> only the document update date is shown; no effective date is set.</li>
+<li><strong>Canonical address of this page:</strong> it is published after the public documentation site is configured, and the address in use depends on the maintainer's deployment and the store listing. Keeping or migrating an older address is a separate decision.</li>
+<li><strong>Developer contact channel:</strong> only the project's public issue tracker exists today; there is no dedicated privacy email or form.</li>
+<li><strong>Link to this page inside the extension:</strong> the About panel in settings currently shows an inline privacy summary only, with no link to this page.</li>
+<li><strong>Third-party policy links:</strong> services are listed by name, without their privacy-policy URLs, to avoid publishing unverified links.</li>
+<li><strong>Minors and sensitive personal information:</strong> the extension performs no age gating, and no policy statement yet says whether it is intended for minors or advises against sensitive content.</li>
+<li><strong>Retention and deletion commitments:</strong> local data does not expire automatically. Whether to add a single control that clears all local data, or to state a retention period, is undecided.</li>
+<li><strong>Copies held by Chrome Sync:</strong> the extension cannot delete historical copies kept by the synchronization service, and account-side cleanup guidance is undecided.</li>
+<li><strong>Governing law and complaints:</strong> the applicable jurisdiction, compliance baseline (for example GDPR or China's PIPL), and complaint handling are undecided.</li>
+<li><strong>Project license:</strong> the source repository has no license file for the project itself yet; bundled third-party resources keep their own licenses.</li>
+</ul>
+<h2>Your choices and contact</h2><p>Leave automatic translation disabled, choose individual paragraphs or selections, cancel active tasks, change services, revoke site permissions, manage downloaded resources, or uninstall the extension. Change the interface language independently of the translation target. For questions, use the <a href="https://github.com/cherubr/yezhiyi-public/issues">public issue tracker</a>. Do not include keys, private documents, or unredacted requests.</p><p>This English explanation accompanies the <a href="privacy.html">Chinese privacy document</a>. Both describe the implementation; neither promises how third-party services will process data. Public store approval and live service availability are separate from source-code behavior.</p></main></body></html>
