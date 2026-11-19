@@ -28,11 +28,17 @@ PDF parsing, OCR, in-place layout, revisions, independent drafts, and export run
 
 In-place revisions and independent editor drafts are separate. Automatic translated PDF export includes saved in-place revisions, but excludes independent draft changes. Use **Export page draft** to preserve editor changes through browser print preview and **Save as PDF**. Exports leave source bytes unchanged. Missing translations require an explicit choice to translate or retain the original; translation export supports up to 50 source pages at once.
 
+## AI prompts
+
+Choose from seven built-in translation styles or copy one to create a custom template using six visual preferences and optional advanced instructions. Templates and up to five previous versions stay on this device, with favorites and JSON import/export. The webpage panel and PDF toolbar offer temporary session choices; running tasks retain their original prompt snapshot.
+
+Local previews send no requests. Translation tests and comparisons use your configured AI service and may incur API charges. Other translation services are unaffected. Disabling prompts restores the original AI instructions.
+
 ## Glossary and reading style
 
 Add local terminology rules, restrict them by target language, preserve source terms, or import/export JSON. The limit is 500 custom terms and 256 KiB per import. Import replaces the current list and requires saving. Built-in terms include Linux, RHCE, OpenShift, Kubernetes, and Red Hat.
 
-Interface settings groups interface language, appearance (follow system, light, or dark), and thirteen color themes: Midnight Cyan is the default, with Minimal Gray, Luminous Blue, Forest Green, Soft Lavender, Warm Sand, Lagoon, Rose, Sunset, Mint, Amber, Cherry, and Indigo. Every theme has light and dark variants, and older theme settings still load. Display style separately controls bilingual mode and translation font, scale, color, weight, line height, and paragraph spacing.
+Interface settings groups interface language, appearance (follow system, light, or dark), and thirteen color themes: Midnight Cyan is the default, with Minimal Gray, Luminous Blue, Forest Green, Soft Lavender, Warm Sand, Lagoon, Rose, Sunset, Mint, Amber, Cherry, and Indigo. Every theme has light and dark variants, and each theme card previews the real interface structure in the current appearance; older theme settings still load. Display style separately controls bilingual mode and translation font, scale, color, weight, line height, and paragraph spacing.
 
 ## Installation and help
 
