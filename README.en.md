@@ -1,22 +1,24 @@
-# Yezhiyi · Bilingual Web Translator
+# Yezhi Translate · Web, PDF & AI Translator
+
+Translate Smarter. Read Freely.
 
 [简体中文](README.md) · [Privacy and data](docs/privacy-en.html)
 
-Yezhiyi is a Chrome Manifest V3 extension for bilingual webpages and PDF reading. The current source version is **1.0.3**; this is not a claim about the version approved or published in the Chrome Web Store.
+Yezhi Translate is a Chrome Manifest V3 extension for bilingual webpages and PDF reading. The current source version is **1.0.3**; this is not a claim about the version approved or published in the Chrome Web Store.
 
 ## Read webpages
 
-Click the floating button to translate or cancel the current page. Hover to open its radial menu for translation controls, PDFs, settings, and feedback; the menu stays open while the pointer travels between the button and the menu. When there is not enough room on the right, the button moves temporarily and returns when the menu closes. Dragging saves your preferred position, and the button snaps to an edge only when you release it within 256px of one.
+Click the floating button to translate or cancel the current page. Hover or use the keyboard to open a vertical toolbar for translation controls, settings, PDFs, and feedback, in that order. It opens downward when space allows, upward otherwise, and scrolls in small viewports. Any temporary position adjustment is restored when the toolbar closes without changing your saved position. Dragging saves your preferred position, and the button snaps to an edge only when you release it within 256px of one.
 
 The translation tooltip shows your actual Chrome keyboard shortcut when one is assigned and enabled. Configure it at `chrome://extensions/shortcuts`. The suggested shortcut is Ctrl+Shift+Y on Windows/Linux and Command+Shift+Y on macOS. Point at a paragraph and press Shift to translate or restore that paragraph.
 
 Automatic translation is off by default. Once page translation starts, new visible content is translated as you scroll. New requests pause when the page is hidden and resume when you return. Canceling stops that page's session.
 
-The interface supports English, Simplified Chinese, and Traditional Chinese. Other browser interface languages fall back to English. Set **Interface settings → Interface language** independently of the source and target languages. The target can follow the browser or use an explicit supported language.
+The interface supports English, Simplified Chinese, Traditional Chinese, Japanese, and Korean. Other browser interface languages fall back to English. Set **Interface settings → Interface language** independently of the source and target languages. The target can follow the browser or use an explicit supported language.
 
 ## Choose a service
 
-Google Translate and MyMemory require no API credentials; availability and usage limits depend on the service and network. Baidu requires an App ID, key, and a successful connection test for the current credentials. AI providers use your own OpenAI-compatible endpoint, API key, and model. Local Ollama requires a running local server and an installed model, with no API key.
+Google Translate and MyMemory require no API credentials; availability and usage limits depend on the service and network. Baidu requires an App ID, key, and a successful connection test for the current credentials. AI providers use your own OpenAI-compatible endpoint, API key, and model. You can add up to 20 custom model entries with their own address and model; a loopback address requires no key but the local server must already be running.
 
 Connection settings, request rate, and concurrency are managed separately for each service. Pages sharing an account share these limits. Configured does not mean verified, and higher limits do not guarantee faster translation. Provider billing and data policies apply.
 
@@ -30,15 +32,15 @@ In-place revisions and independent editor drafts are separate. Automatic transla
 
 ## AI prompts
 
-Choose from seven built-in translation styles or copy one to create a custom template using six visual preferences and optional advanced instructions. Templates and up to five previous versions stay on this device, with favorites and JSON import/export. The webpage panel and PDF toolbar offer temporary session choices; running tasks retain their original prompt snapshot.
+Choose from seven built-in translation styles or copy one to create a custom template using six visual preferences and optional advanced instructions. Templates and up to five previous versions stay on this device, with favorites and JSON import/export. Download a sample JSON file from the import area; duplicate templates can be skipped, copied, or replaced while preserving history. The webpage panel and PDF toolbar offer temporary session choices; running tasks retain their original prompt snapshot.
 
 Local previews send no requests. Translation tests and comparisons use your configured AI service and may incur API charges. Other translation services are unaffected. Disabling prompts restores the original AI instructions.
 
 ## Glossary and reading style
 
-Add local terminology rules, restrict them by target language, preserve source terms, or import/export JSON. The limit is 500 custom terms and 256 KiB per import. Import replaces the current list and requires saving. Built-in terms include Linux, RHCE, OpenShift, Kubernetes, and Red Hat.
+Add local terminology rules, restrict them by target language, preserve source terms, or import/export JSON. Search and filter by target language or status, edit individual entries, and download an import template with format guidance. The limit is 500 custom terms and 256 KiB per import. Importing merges by source term plus target language, overwriting matching entries and keeping the rest, and requires saving. Built-in terms include Linux, RHCE, OpenShift, Kubernetes, and Red Hat.
 
-Interface settings groups interface language, appearance (follow system, light, or dark), and thirteen color themes: Midnight Cyan is the default, with Minimal Gray, Luminous Blue, Forest Green, Soft Lavender, Warm Sand, Lagoon, Rose, Sunset, Mint, Amber, Cherry, and Indigo. Every theme has light and dark variants, and each theme card previews the real interface structure in the current appearance; older theme settings still load. Display style separately controls bilingual mode and translation font, scale, color, weight, line height, and paragraph spacing.
+Interface settings groups interface language, appearance (follow system, light, or dark), and fifteen color themes: Midnight Cyan with dark appearance is the default, with Minimal Gray, Monochrome, Pure white, Luminous Blue, Forest Green, Soft Lavender, Warm Sand, Lagoon, Rose, Sunset, Mint, Amber, Cherry, and Indigo. Every theme has light and dark variants, and each theme card previews the real interface structure in the current appearance; older theme settings still load. Display style separately controls bilingual mode and translation font, scale, color, weight, line height, and paragraph spacing.
 
 ## Installation and help
 
